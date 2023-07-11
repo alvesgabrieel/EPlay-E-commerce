@@ -4,12 +4,21 @@ import Tag from '../Tag'
 import { formataPreco } from '../ProductsList'
 
 import * as S from './styles'
+import { useDispatch } from 'react-redux'
+import { add, openCart } from '../../store/reducers/cart'
 
 type Props = {
   game: Game
 }
 
 const Hero = ({ game }: Props) => {
+  const dispatch = useDispatch()
+
+  const addToCart = () => {
+    dispatch(add(game))
+    dispatch(openCart())
+  }
+
   return (
     <S.Banner style={{ backgroundImage: `url(${game.media.cover})` }}>
       <div className="container">
@@ -33,6 +42,7 @@ const Hero = ({ game }: Props) => {
               type="button"
               variant="primary"
               title="Clique aqui para adicionar ao carrinho"
+              onClick={addToCart}
             >
               Adicionar ao carrinho
             </Button>
