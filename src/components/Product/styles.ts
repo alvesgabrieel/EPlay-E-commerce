@@ -2,16 +2,16 @@ import { Link } from 'react-router-dom'
 
 import styled from 'styled-components'
 
-import { cores } from '../../styles'
+import { colors } from '../../styles'
 import { TagContainer } from '../Tag/styles'
 
 export const Card = styled(Link)`
-  background-color: ${cores.cinza};
+  background-color: ${colors.gray};
   border-radius: 8px;
   padding: 8px;
   position: relative;
   text-decoration: none;
-  color: ${cores.branco};
+  color: ${colors.white};
   display: block;
   height: 100%;
 
@@ -27,7 +27,7 @@ export const Card = styled(Link)`
   }
 `
 
-export const Titulo = styled.h3`
+export const Title = styled.h3`
   font-weight: bold;
   font-size: 16px;
   display: block;
@@ -35,7 +35,7 @@ export const Titulo = styled.h3`
   margin-bottom: 8px;
 `
 
-export const Desricao = styled.p`
+export const Description = styled.p`
   font-size: 14px;
   line-height: 22px;
   display: block;

@@ -4,7 +4,7 @@ import { HashLink } from 'react-router-hash-link'
 import * as S from './styles'
 
 import logo from '../../assets/images/logo.svg'
-import carrinho from '../../assets/images/carrinho.svg'
+import cartIcon from '../../assets/images/carrinho.svg'
 
 import { openCart } from '../../store/reducers/cart'
 import { useDispatch, useSelector } from 'react-redux'
@@ -30,7 +30,9 @@ const Header = () => {
             <span />
           </S.Hamburguer>
           <Link to="/">
-            <img src={logo} alt="eplay" />
+            <h1>
+              <img src={logo} alt="eplay" />
+            </h1>
           </Link>
           <nav>
             <S.Links>
@@ -61,10 +63,10 @@ const Header = () => {
             </S.Links>
           </nav>
         </div>
-        <S.LinksCart onClick={toOpenCart} href="#">
-          {items.length} <span>- produto(s)</span>
-          <img src={carrinho} alt="carrinho" />
-        </S.LinksCart>
+        <S.CartButton role="button" onClick={toOpenCart}>
+          {items.length} <span> - produto(s)</span>
+          <img src={cartIcon} alt="carrinho" />
+        </S.CartButton>
       </S.HeaderRow>
 
       <S.NavMobile className={isMenuOpen ? 'is-open' : ''}>

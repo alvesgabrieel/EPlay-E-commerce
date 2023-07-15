@@ -1,11 +1,10 @@
 import { useState } from 'react'
 
-import { GalleryItem } from '../../pages/Home'
 import Section from '../Section'
 
 import play from '../../assets/images/play.png'
 import zoom from '../../assets/images/zoom.png'
-import close from '../../assets/images/fechar.png'
+import closeIcon from '../../assets/images/fechar.png'
 
 import * as S from './styles'
 
@@ -73,17 +72,11 @@ const Gallery = ({ defaultCover, name, items }: Props) => {
           ))}
         </S.Items>
       </Section>
-      <S.Modal className={modal.isVisible ? 'visible' : ''}>
+      <S.Modal className={modal.isVisible ? 'is-visible' : ''}>
         <S.ModalContent className="container">
           <header>
             <h4>{name}</h4>
-            <img
-              src={close}
-              alt="Icone de fechar"
-              onClick={() => {
-                closeModal()
-              }}
-            />
+            <img src={closeIcon} alt="Icone de fechar" onClick={closeModal} />
           </header>
           {modal.type === 'image' ? (
             <img src={modal.url} alt="" />
